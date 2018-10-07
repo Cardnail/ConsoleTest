@@ -31,8 +31,8 @@ public class BuildingsAnalyser {
 		String[] lines = text.split("\r\n");
 
 		// разделить текст на слова
-		// записать в список набор слов для каждой строки
-		List<String[]> lineWords = splitByWordsAndAddToList(lines);
+		// и записать в список набор слов для каждой строки
+		List<String[]> lineWords = splitByWords(lines);
 
 		Map<String, Integer> map = count(lineWords);
 
@@ -42,7 +42,7 @@ public class BuildingsAnalyser {
 		}
 	}
 
-	private static List<String[]> splitByWordsAndAddToList(String[] lines) {
+	private static List<String[]> splitByWords(String[] lines) {
 		List<String[]> lineWords = new ArrayList<>();
 		for (String line : lines) {
 			String[] words = line.split(",");
