@@ -34,7 +34,7 @@ public class BuildingsAnalyser {
 		// и записать в список набор слов для каждой строки
 		List<String[]> lineWords = splitByWords(lines);
 
-		Map<String, Integer> map = count(lineWords);
+		Map<String, Integer> map = countHousesInEveryYear(lineWords);
 
 		show(map);
 	}
@@ -58,7 +58,7 @@ public class BuildingsAnalyser {
 		return lineWords;
 	}
 
-	private static Map<String, Integer> count(List<String[]> lineWords) {
+	private static Map<String, Integer> countHousesInEveryYear(List<String[]> lineWords) {
 		// посчитать количество элементов с годом house_year
 		Map<String, Integer> map = new TreeMap<>();
 		for (String[] words : lineWords) {
