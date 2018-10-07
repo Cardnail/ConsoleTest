@@ -36,6 +36,10 @@ public class BuildingsAnalyser {
 
 		Map<String, Integer> map = count(lineWords);
 
+		show(map);
+	}
+
+	private static void show(Map<String, Integer> map) {
 		// вывод данных на экран
 		for (String year : map.keySet()) {
 			System.out.println("Year = " + year + " 	count = " + map.get(year));
