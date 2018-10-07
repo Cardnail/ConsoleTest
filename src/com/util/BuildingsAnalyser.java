@@ -32,6 +32,17 @@ public class BuildingsAnalyser {
 
 		// разделить текст на слова
 		// записать в список набор слов для каждой строки
+		List<String[]> lineWords = splitByWordsAndAddToList(lines);
+
+		Map<String, Integer> map = count(lineWords);
+
+		// вывод данных на экран
+		for (String year : map.keySet()) {
+			System.out.println("Year = " + year + " 	count = " + map.get(year));
+		}
+	}
+
+	private static List<String[]> splitByWordsAndAddToList(String[] lines) {
 		List<String[]> lineWords = new ArrayList<>();
 		for (String line : lines) {
 			String[] words = line.split(",");
@@ -40,13 +51,7 @@ public class BuildingsAnalyser {
 				lineWords.add(words);
 			}
 		}
-
-		Map<String, Integer> map = count(lineWords);
-
-		// вывод данных на экран
-		for (String year : map.keySet()) {
-			System.out.println("Year = " + year + " 	count = " + map.get(year));
-		}
+		return lineWords;
 	}
 
 	private static Map<String, Integer> count(List<String[]> lineWords) {
